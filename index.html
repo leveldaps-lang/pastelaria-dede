@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pastelaria do Dedê — cardápio e pedidos pelo WhatsApp.">
+<title>Pastelaria do Dedê | Peça agora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#inicio"><img src="assets/logo-pastelaria.jpeg" alt="Logo Pastelaria do Dedê"><span>Pastelaria do Dedê</span></a>
+  <nav><a href="#cardapio">Cardápio</a><a href="#pedido">Fazer pedido</a><a href="#entrega">Entrega</a></nav>
+  <a class="nav-wa" href="https://wa.me/5532999078885" target="_blank" rel="noopener">WhatsApp ↗</a>
+</header>
+<main id="inicio">
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">🥟 PASTEL QUENTINHO • PEDIDO PELO WHATSAPP</span>
+    <h1>O sabor do<br><em>Dedê</em> chegou.</h1>
+    <p>Escolha seu pastel, bebida e adicionais. Monte o pedido aqui e envie tudo pronto para o WhatsApp da pastelaria.</p>
+    <div class="hero-buttons"><a class="btn yellow" href="#cardapio">Ver cardápio ↓</a><a class="btn glass" href="#pedido">Montar pedido</a></div>
+    <div class="hero-pills"><span>⭐ Tradicionais R$ 10</span><span>🔥 Especiais a partir de R$ 12</span><span>💬 WhatsApp direto</span></div>
+  </div>
+  <div class="hero-visual">
+    <div class="sunburst"></div><img src="assets/logo-pastelaria.jpeg" class="hero-logo" alt="Pastelaria do Dedê">
+    <div class="hero-card"><b>Seu pedido, do seu jeito.</b><small>Escolha • revise • envie</small></div>
+  </div>
+</section>
+<section class="quick"><div><b>🔥 Feito na hora</b><span>Pastéis crocantes e caprichados</span></div><div><b>🛵 Entrega</b><span>Informe endereço e referência</span></div><div><b>💚 WhatsApp</b><span>Pedido chega direto para a loja</span></div></section>
+<section class="section" id="cardapio">
+  <div class="heading"><div><span class="kicker">ESCOLHA O QUE VAI COMER</span><h2>Cardápio</h2></div><p>As fotos são reais e ilustrativas; os sabores e preços seguem o cardápio enviado pela loja.</p></div>
+  <div class="tabs"><button class="tab active" data-filter="todos">Todos</button><button class="tab" data-filter="tradicionais">Tradicionais</button><button class="tab" data-filter="especiais">Especiais</button><button class="tab" data-filter="bebidas">Bebidas</button><button class="tab" data-filter="sucos">Sucos</button><button class="tab" data-filter="adicionais">Adicionais</button></div>
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+<section class="showcase"><div class="show-img"><img src="https://storage.alfalabs.com.br/assets/imgClientes/promocoes/id-773/2026-02-26_16-38-19.png" alt="Pastéis fritos recheados"></div><div><span class="kicker">DEU FOME?</span><h2>Monte tudo em poucos cliques.</h2><p>O carrinho calcula o total e o WhatsApp recebe o nome, endereço, pagamento, itens e quantidades.</p><a class="btn red" href="#pedido">Quero pedir agora →</a></div></section>
+<section class="section order" id="pedido">
+  <div class="heading center"><span class="kicker">PEDIDO PELO WHATSAPP</span><h2>Monte seu pedido</h2><p>Preencha seus dados e confira o carrinho antes de enviar.</p></div>
+  <form id="orderForm" class="order-layout">
+    <div class="form-card"><div class="form-head"><b>01</b><div><h3>Seus dados</h3><span>Para a loja saber para quem é o pedido.</span></div></div>
+      <div class="fields">
+        <label>Nome completo<input id="nome" name="nome" required placeholder="Ex.: João da Silva"></label>
+        <label>Seu WhatsApp<input id="telefone" name="telefone" required placeholder="(00) 00000-0000"></label>
+        <label class="full">Tipo de pedido<select id="tipoPedido" name="tipoPedido"><option value="entrega">🛵 Entrega</option><option value="retirada">🏪 Retirada no local</option></select></label>
+        <label class="full" id="enderecoWrap">Endereço completo<input id="endereco" name="endereco" required placeholder="Rua, número, bairro, cidade"></label>
+        <label class="full" id="referenciaWrap">Ponto de referência<input id="referencia" name="referencia" placeholder="Ex.: perto da praça"></label>
+        <label class="full">Forma de pagamento<select id="pagamento" name="pagamento"><option>Pix</option><option>Dinheiro</option><option>Cartão de débito</option><option>Cartão de crédito</option></select></label>
+        <label class="full hidden" id="trocoWrap">Troco para quanto?<input id="troco" name="troco" placeholder="Ex.: R$ 50,00"></label>
+        <label class="full">Observação<textarea id="observacao" name="observacao" rows="3" placeholder="Ex.: pouco molho, sem cebola... (opcional)"></textarea></label>
+      </div>
+    </div>
+    <div class="form-card cart-card"><div class="form-head"><b>02</b><div><h3>Seu carrinho</h3><span>Adicione produtos no cardápio.</span></div></div><div id="cartItems" class="cart-items"></div><div class="total"><span>Total do pedido</span><strong id="cartTotal">R$ 0,00</strong></div><button class="btn wa-submit" type="submit">Enviar pedido pelo WhatsApp <span>↗</span></button><small class="hint">O WhatsApp abrirá com a mensagem pronta para você enviar.</small></div>
+  </form>
+</section>
+<section class="delivery" id="entrega"><div class="delivery-inner"><div class="delivery-icon">🛵</div><div><span class="kicker">ENTREGA OU RETIRADA</span><h2>Você escolhe.</h2><p>Na entrega, informe endereço e referência. Na retirada, o endereço não é necessário.</p></div><a class="btn yellow" href="#pedido">Fazer pedido</a></div></section>
+<section class="original"><div><span class="kicker">CARDÁPIO DA LOJA</span><h2>Confira também o cardápio original</h2><p>A imagem enviada pela pastelaria foi mantida no projeto para conferência dos sabores e valores.</p></div><img src="assets/cardapio-original.jpeg" alt="Cardápio original da Pastelaria do Dedê"></section>
+</main>
+<footer><div class="footer-brand"><img src="assets/logo-pastelaria.jpeg" alt="Logo"><div><b>Pastelaria do Dedê</b><span>Seu pastel, seu jeito. ❤️</span></div></div><a href="https://wa.me/5532999078885" target="_blank" rel="noopener">WhatsApp da loja ↗</a><small>© 2026 Pastelaria do Dedê</small></footer>
+<div id="toast" class="toast"></div><script src="script.js"></script>
+</body></html>
